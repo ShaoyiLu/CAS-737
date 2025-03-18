@@ -23,13 +23,6 @@ def concatenate_naive(anim1, anim2):
     anim1.positions = np.vstack((anim1.positions, anim2.positions))
     return anim1
 
-
-'''NOTE 
-for motion editing, only change anim.rotations and anim.positions
-no need to change the skeleton, which is anim.orients and anim.offsets
-'''
-
-#TODO: smoothly connects the two motions
 def concatenate(anim1, anim2, blend_frame=30):
 
     rotate1 = anim1.rotations[-blend_frame, 0]
@@ -66,8 +59,6 @@ def concatenate(anim1, anim2, blend_frame=30):
     new_anim = A.Animation(new_rotation, new_position, anim1.orients, anim1.offsets, anim1.parents)
     return new_anim
 
-
-#TODO: splice arm dancing from anim2 into anim1 running
 def splice(anim1, anim2, joint_name):
 
     frame1 = anim1.shape[0]  # anim1 140 frames
