@@ -1,2 +1,2 @@
-# CAS-737
+# CAS 737
 Computational Animation
