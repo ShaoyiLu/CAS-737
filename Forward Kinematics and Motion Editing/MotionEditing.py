@@ -24,7 +24,6 @@ def concatenate_naive(anim1, anim2):
     return anim1
 
 def concatenate(anim1, anim2, blend_frame=30):
-
     rotate1 = anim1.rotations[-blend_frame, 0]
     rotate2 = anim2.rotations[0, 0]
     inverse = Q.Quaternions(-rotate2.qs / np.sum(rotate2.qs**2, axis=-1))
